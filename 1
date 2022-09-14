@@ -1,0 +1,64 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+MSG1 DB "BADRUL1 $"  
+MSG2 DB "BADRUL2 $"
+MSG3 DB "BADRUL3 $"
+MSG4 DB "BADRUL4 $"
+MSG5 DB "BADRUL5 $"
+.CODE
+MAIN PROC
+    MOV AX,@DATA
+    MOV DS, AX 
+    
+    LEA DX,MSG1
+    MOV AH,9
+    INT 21H 
+    
+    MOV AH,2
+    MOV DL,0AH
+    INT 21H
+    MOV DL,0DH
+    INT 21H
+    
+    LEA DX,MSG2
+    MOV AH,9
+    INT 21H 
+    
+    MOV AH,2
+    MOV DL,0AH
+    INT 21H
+    MOV DL,0DH
+    INT 21H
+    
+    LEA DX,MSG3
+    MOV AH,9
+    INT 21H 
+    
+    MOV AH,2
+    MOV DL,0AH
+    INT 21H
+    MOV DL,0DH
+    INT 21H 
+    
+    LEA DX,MSG4
+    MOV AH,9
+    INT 21H
+    
+    MOV AH,2
+    MOV DL,0AH
+    INT 21H
+    MOV DL,0DH
+    INT 21H 
+    
+    LEA DX,MSG5
+    MOV AH,9
+    INT 21H  
+    
+    MOV AH,2
+    MOV DL,0AH
+    INT 21H
+    MOV DL,0DH
+    INT 21H
+         
+         

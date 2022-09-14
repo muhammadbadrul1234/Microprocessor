@@ -45,7 +45,7 @@ MAIN PROC
     
     SUB BL, CL
     MOV AH,2 
-    ;SUB BL,48
+    ADD BL,48
     MOV DL,BL
     INT 21H 
     

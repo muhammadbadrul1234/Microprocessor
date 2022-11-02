@@ -1,0 +1,49 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+Msg1 DB "My ID is 2012020216$"   
+Msg2 DB "My Batch: $"
+Msg3 DB "Enter a Number $"
+Var1 DB ?
+Var2 DB ?
+.CODE
+MAIN PROC 
+ MOV AX,@DATA  
+ MOV DS,AX 
+ 
+ MOV AH,9
+ LEA DX,Msg1
+ INT 21H
+ 
+ MOV AH,9
+ LEA DX,Msg2
+ INT 21H
+ 
+ MOV AH,1
+ INT 21H
+ MOV Var1, AL
+ 
+ MOV AH,1
+ INT 21H
+ MOV Var1, AL 
+ 
+ MOV AH,9
+ LEA DX,Msg3
+ INT 21H 
+ 
+ MOV AH,1
+ INT 21H
+ MOV Var1, AL
+ 
+ MOV AH,1
+ INT 21H
+ MOV Var1, AL
+ MOV DL, 0AH
+ INT 21H
+ 
+   
+         
+         
+ 
+ 
+ 

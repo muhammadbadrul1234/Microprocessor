@@ -1,0 +1,19 @@
+.MODEL
+.STACK 100H
+.DATA  
+
+.CODE
+MAIN PROC 
+    MOV AH,1
+    INT 21H
+    MOV BL,AL
+    SUB BL,48
+    
+    MOV CX,0
+    MOV CL,BL
+    
+    TOP: 
+    MOV AH,2
+    MOV DL,"$"
+    INT 21H
+    LOOP TOP

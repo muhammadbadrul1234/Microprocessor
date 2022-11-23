@@ -1,0 +1,29 @@
+.MODEL
+.STACK 100H
+.DATA  
+
+.CODE
+MAIN PROC 
+    
+    mov ah,1
+    int 21h
+    mov bl,al
+    sub bl,48
+    
+    mov ah,1
+    int 21h
+    sub al,48
+    
+    mul bl
+    aam
+    
+    mov cx,ax
+    add ch,48
+    add cl,48
+    
+    mov ah,2
+    mov dl,ch
+    int 21h
+    
+    mov dl,cl
+    int 21h

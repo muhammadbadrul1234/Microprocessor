@@ -1,0 +1,62 @@
+*Way  1*
+
+.MODEL
+.STACK 100H
+.DATA  
+
+.CODE
+MAIN PROC 
+    
+    MOV AH,1
+    INT 21H
+    MOV BL,AL
+    SUB BL,48
+    
+    MOV CX,0
+    MOV CL,BL 
+    
+    add bl,48
+    
+    TOP: 
+    MOV AH,2 
+    
+    DEC bl
+    
+    MOV DL,bl
+    INT 21H
+    LOOP TOP
+
+
+*way 2*
+
+.MODEL
+.STACK 100H
+.DATA  
+
+.CODE
+MAIN PROC 
+    
+    MOV AH,1
+    INT 21H
+    MOV BL,AL
+   ;SUB BL,48
+    
+    MOV CX,0
+    MOV CL,BL 
+    
+    ;add bl,48
+    
+    TOP: 
+    MOV AH,2
+    MOV DL,bl
+    INT 21H  
+    dec bl
+    CMP BL,"0"
+    JE EXIT
+    LOOP TOP
+    
+    exit:
+    mov ah,4ch
+    int 21h
+    main endp
+end main
